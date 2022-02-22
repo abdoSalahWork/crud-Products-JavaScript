@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Css/all.min.css">
+    <link rel="stylesheet" href="Css/bootstrap.min.css">
+    <link rel="stylesheet" href="Css/style.css">
+</head>
+
+<body class="bg-light">
+
+    <div class="container my-5 ">
+        <div class="w-50 m-auto shadow h-100 bg-white p-5 rounded ">
+            <p id="success" class="alert alert-success d-none"></p>
+            <div class="u-name mb-4">
+                <label for="ProductName">ProductName:</label>
+                <input id="ProductName" type="text" class="form-control">
+                <p id="erorrProductName" class="text-danger p-0 d-none"></p>
+            </div>
+
+            <div class="u-name mb-4">
+                <label for="ProductCategory">ProductCategory:</label>
+                <input id="ProductCategory" type="text" class="form-control ">
+                <p id="erorrProductCategory" class="text-danger p-0 d-none"></p>
+            </div>
+
+            <div class="u-name mb-4">
+                <label for="ProductPrice">ProductPrice:</label>
+                <input id="ProductPrice" type="text" class="form-control">
+                <p id="erorrProductPrice" class="text-danger p-0 d-none"></p>
+            </div>
+
+            <div class="u-name mb-4">
+                <label for="ProductDescription">ProductDescription:</label>
+                <input id="ProductDescription" type="text" class="form-control">
+                <p id="erorrProductDescription" class="text-danger p-0 d-none"></p>
+            </div>
+
+            <button id="setData" class="btn btn-info mt-4">Add Product</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <input id="search" class="form-control w-25 m-auto" type="text" class="form-control mb-4"
+            placeholder="search...">
+
+        <table class="table table-hover my-5 text-center">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>description</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+
+            <tbody id="demo">
+
+            </tbody>
+
+
+        </table>
+        <!-- Modal Update -->
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog my-0" role="document">
+                <div class="modal-content text-left">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body p-3">
+                        <div class="u-name mb-4">
+                            <label for="updateProductName">ProductName:</label>
+                            <input id="updateProductName" type="text" class="form-control">
+                            <p id="updateErorrProductName" class="text-danger p-0 d-none"></p>
+                        </div>
+
+                        <div class="u-name mb-4">
+                            <label for="updateProductCategory">ProductCategory:</label>
+                            <input id="updateProductCategory" type="text" class="form-control ">
+                            <p id="updateErorrProductCategory" class="text-danger p-0 d-none"></p>
+                        </div>
+
+                        <div class="u-name mb-4">
+                            <label for="updateProductPrice">ProductPrice:</label>
+                            <input id="updateProductPrice" type="text" class="form-control">
+                            <p id="updateErorrProductPrice" class="text-danger p-0 d-none"></p>
+                        </div>
+
+                        <div class="u-name mb-4">
+                            <label for="updateProductDescription">ProductDescription:</label>
+                            <input id="updateProductDescription" type="text" class="form-control">
+                            <p id="updateErorrProductDescription" class="text-danger p-0 d-none"></p>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" id="upadateDataId">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-info" id="setUpdate">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Delete -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-info text-center">
+                            Do you really want to delete ?<br>
+                            process cannot be undone
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" id="deleteDataId">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger" id="setDelete">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- This Pagenation -->
+        <div class="d-flex justify-content-center">
+            <nav aria-label="...">
+                <ul class="pagination user-select-auto" id="pagination">
+
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+
+
+    <script src="JS/jquery-3.5.1.slim.min.js"></script>
+    <script src="JS/bootstrap.bundle.js"></script>
+    <script src="JS/main.js"></script>
+</body>
+
+</html>
